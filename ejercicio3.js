@@ -13,4 +13,13 @@ const songs = [
 ]
 const rockPlaylist = []
 
-function getRock5Min(songs) {}
+getRock5Min(songs)
+console.log(rockPlaylist)
+
+function getRock5Min(songs) {
+  for (let song of songs) {
+    if (song.genre === 'Rock' && song.duration > 5) {
+      rockPlaylist.push(song)
+    }
+  }
+}
