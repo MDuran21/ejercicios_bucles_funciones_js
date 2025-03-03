@@ -11,10 +11,24 @@ const actors = [
   { name: 'Cate Blanchett', born: 1969 }
 ]
 
+//He visto que estarían mal escritas algunas de las oraciones y que dependiendo de si los nombres acaban en s o no faltaría un "'s" al final de su nombre pero creo que sabría coger el nombre, buscar si su última posición es o no es una s y luego tener este console.log o otro con la "'s"
+
+const currentYear = new Date().getFullYear()
 let actorsAge = []
 calculateActorsAges(actors)
+showResults(actorsAge)
 
 function calculateActorsAges(actors) {
   for (let actor of actors) {
+    let age = currentYear - actor.born
+    actorsAge.push({ name: actor.name, age: age })
   }
+}
+
+function showResults(actorsAge) {
+  console.log('')
+  for (let actor of actorsAge) {
+    console.log(`${actor.name} age is ${actor.age}`)
+  }
+  console.log('')
 }
